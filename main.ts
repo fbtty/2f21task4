@@ -9,11 +9,13 @@ basic.forever(function () {
             led.plot(number, y)
             basic.pause(500)
         } else {
-            while (number != 0) {
-                basic.clearScreen()
-                number += -1
-                led.plot(number, y)
-                basic.pause(500)
+            while (input.buttonIsPressed(Button.A)) {
+                while (number > 0) {
+                    basic.clearScreen()
+                    number += -1
+                    led.plot(number, y)
+                    basic.pause(500)
+                }
             }
         }
     }
@@ -24,11 +26,13 @@ basic.forever(function () {
             led.plot(number, y)
             basic.pause(500)
         } else {
-            while (y != 0) {
-                basic.clearScreen()
-                y += -1
-                led.plot(number, y)
-                basic.pause(500)
+            while (input.buttonIsPressed(Button.B)) {
+                while (y != 0) {
+                    basic.clearScreen()
+                    y += -1
+                    led.plot(number, y)
+                    basic.pause(500)
+                }
             }
         }
     }
