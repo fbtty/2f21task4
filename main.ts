@@ -3,21 +3,33 @@ let number = 0
 let y = 0
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
-        basic.clearScreen()
-        led.plot(number, y)
-        basic.pause(500)
-        number += 1
-    }
-    if (number > 4) {
-        number = 0
+        if (number < 4) {
+            basic.clearScreen()
+            number += 1
+            led.plot(number, y)
+            basic.pause(500)
+        } else {
+            while (number != 0) {
+                basic.clearScreen()
+                number += -1
+                led.plot(number, y)
+                basic.pause(500)
+            }
+        }
     }
     if (input.buttonIsPressed(Button.B)) {
-        basic.clearScreen()
-        led.plot(number, y)
-        basic.pause(500)
-        y += 1
-    }
-    if (y > 4) {
-        y = 0
+        if (y < 4) {
+            basic.clearScreen()
+            y += 1
+            led.plot(number, y)
+            basic.pause(500)
+        } else {
+            while (y != 0) {
+                basic.clearScreen()
+                y += -1
+                led.plot(number, y)
+                basic.pause(500)
+            }
+        }
     }
 })
